@@ -53,7 +53,14 @@ export const getFetchInstance = async <T>({
     response = await interceptor(response);
   }
 
-  return (await response.json()) as T;
+  const text = await response.text();
+
+try {
+  return JSON.parse(text) as T;
+} catch (error) {
+  console.error("❌ Failed to parse JSON. Server returned:", text);
+  throw new Error("Invalid JSON response from server");
+}
 };
 
 // addResponseInterceptor(async (response) => {

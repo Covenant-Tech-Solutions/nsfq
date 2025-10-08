@@ -131,11 +131,11 @@ export default function Waiting() {
             <p className="mt-1">
               {tran("For any inquiries, please contact us at")}
               <a
-                href="mailto:hello@quizix.com"
+                href="mailto:brainbank@nexmatics.africa"
                 className="text-slate-600 underline hover:text-slate-800"
               >
                 {appInfo?.application_info?.company_info.email ||
-                  "hello@quizix.com"}
+                  "brainbank@nexmatics.africa"}
               </a>
             </p>
           </div>

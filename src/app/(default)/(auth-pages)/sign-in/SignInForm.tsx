@@ -134,7 +134,7 @@ export default function SignInForm() {
         </div>
       </form>
       <p className="text-center max-sm:text-sm">
-        {tran("New to QuiziX Join our commission-free platform")}{" "}
+        {tran("New to BrainBank? Join our platform")}{" "}
         <Link href="/sign-up" className="text-secondary underline">
           {tran("Sign Up")}
         </Link>

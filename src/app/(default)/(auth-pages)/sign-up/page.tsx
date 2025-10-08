@@ -8,7 +8,7 @@ export default async function SignUpPage() {
 
   return (
     <div className="w-full pt-8 sm:pt-20 xl:px-10 2xl:px-[60px]">
-      <AuthPageTitle title="Welcome back to QuiziX" />
+      <AuthPageTitle title="Welcome back to Brainbank" />
       <div className="flex flex-col gap-3">
         <SignUpForm countryCode={countryCode} />
 
