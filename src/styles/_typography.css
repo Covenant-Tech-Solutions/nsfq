@@ -1,0 +1,28 @@
+.display-1 {
+  @apply 3xl:text-[80px] text-5xl font-black sm:text-[52px] lg:text-[72px];
+}
+.display-2 {
+  @apply text-4xl !leading-[120%] font-bold md:text-5xl lg:text-6xl xl:text-[88px];
+}
+.display-4 {
+  @apply text-[56px] font-black;
+}
+.heading-1 {
+  @apply text-[28px] font-bold sm:text-[32px] md:text-4xl lg:text-[40px] xl:text-[44px] 2xl:text-5xl;
+}
+.heading-2 {
+  @apply text-[28px] font-bold lg:text-[32px] xl:text-4xl 2xl:text-[40px];
+}
+
+.heading-3 {
+  @apply text-xl font-bold sm:text-2xl md:text-[32px];
+}
+.heading-4 {
+  @apply text-2xl font-bold;
+}
+.heading-5 {
+  @apply text-lg font-bold 2xl:text-xl;
+}
+.heading-6 {
+  @apply text-lg font-bold 2xl:text-xl;
+}

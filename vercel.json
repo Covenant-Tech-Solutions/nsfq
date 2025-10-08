@@ -1,0 +1,14 @@
+{
+  "env": {
+    "NEXT_PUBLIC_API_BASE_URL": "https://quize.safiul.pxlaxis.com",
+    "NEXT_PUBLIC_BASE_URL": "https://quiz-roan-zeta.vercel.app/",
+    "NEXT_PUBLIC_TOKEN_NAME": "007-g5"
+  },
+  "build": {
+    "env": {
+      "NEXT_PUBLIC_API_BASE_URL": "https://quize.safiul.pxlaxis.com",
+      "NEXT_PUBLIC_BASE_URL": "https://quiz-roan-zeta.vercel.app/",
+      "NEXT_PUBLIC_TOKEN_NAME": "007-g5"
+    }
+  }
+}
