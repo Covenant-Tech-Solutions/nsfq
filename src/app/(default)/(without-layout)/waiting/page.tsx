@@ -78,7 +78,7 @@ export default function Waiting() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span>{tran("Your account is under review.")}</span>
+                <span>{tran("We are reviewing your account.")}</span>
               </li>
               <li className="flex items-start">
                 <svg
@@ -113,7 +113,7 @@ export default function Waiting() {
                   />
                 </svg>
                 <span>
-                  {tran("Access to your account will be granted immediately.")}
+                  {tran("Access to participate in Contests will be granted soon.")}
                 </span>
               </li>
             </ul>
@@ -121,15 +121,15 @@ export default function Waiting() {
 
           <div className="text-sm text-gray-500">
             <p>
-              {tran("Expected approval time is between")}
+              {tran("Yout Accounts usually get approved in ")}
               <span className="font-medium text-slate-600">
                 {" "}
                 {appInfo?.application_info?.KYC_approval_time ||
-                  "3-5 business days"}
+                  "some few minutes.."}
               </span>
             </p>
             <p className="mt-1">
-              {tran("For any inquiries, please contact us at")}
+              {tran("For any inquiries, please contact us at ")}
               <a
                 href="mailto:brainbank@nexmatics.africa"
                 className="text-slate-600 underline hover:text-slate-800"

@@ -11,6 +11,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { SetStateAction, useState } from "react";
 import { _SIDEBAR_MENU } from "@/constants/Sidebar";
+import { useAuthStore } from "@/providers/AuthStoreProviders";
 
 const AnimateHeight = dynamic(() => import("react-animate-height"), {
   ssr: false,
@@ -145,6 +146,8 @@ export default function MobileNavMenu({
 }) {
   const [openMenus, setOpenMenus] = useState<Set<string>>(new Set());
   const path = usePathname();
+  const { user } = useAuthStore((state: any) => state);
+  const { tran } = useTranslations();
 
   const toggleMenu = (menuKey: string, level: number) => {
     setOpenMenus((prev) => {
@@ -193,6 +196,11 @@ export default function MobileNavMenu({
 
   const handleLinkClick = () => {
     setShowMobileMenu(false);
+  };
+
+  const handleSignIn = () => {
+    setShowMobileMenu(false);
+    window.location.href = `/sign-in?redirect=${encodeURIComponent(path)}`;
   };
 
   // Auto-expand menus that contain the active page
@@ -362,6 +370,25 @@ export default function MobileNavMenu({
               ))}
             </ul>
           </div>
+          {/* Auth buttons for mobile */}
+          {!user && (
+            <div className="flex flex-col gap-3 mt-8">
+              <Button
+                variant="secondary-outline"
+                className="w-full"
+                onClick={handleSignIn}
+              >
+                {tran("Sign In")}
+              </Button>
+              <Button
+                href="/sign-up"
+                className="w-full"
+                onClick={() => setShowMobileMenu(false)}
+              >
+                {tran("Sign Up")}
+              </Button>
+            </div>
+          )}
         </nav>
       </div>
     </>

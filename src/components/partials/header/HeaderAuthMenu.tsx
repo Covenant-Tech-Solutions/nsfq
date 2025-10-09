@@ -90,7 +90,7 @@ const HeaderAuthMenu = () => {
       </div>
     </div>
   ) : (
-    <div className="flex items-center justify-start gap-3 text-sm font-medium">
+    <div className="flex items-center justify-start gap-3 text-sm font-medium max-sm:hidden">
       <Button
         variant="secondary-outline"
         onClick={handleRedirect}
