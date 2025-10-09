@@ -18,11 +18,11 @@ import { memo, useMemo } from "react";
 const USER_EXPLANATION = {
   80: {
     title: "Excellent",
-    description: "Well done! You are mastering in this topic",
+    description: "Well done! You have proven your mastery in this topic",
   },
   60: {
     title: "Good",
-    description: "You are doing well in this topic",
+    description: "You did well, keep it up",
   },
   30: {
     ratio: 30,
@@ -32,7 +32,7 @@ const USER_EXPLANATION = {
   0: {
     ratio: 0,
     title: "Very Poor",
-    description: "You need to improve your knowledge",
+    description: "You need to improve your knowledge in this topic",
   },
 };
 
@@ -139,14 +139,14 @@ export const ResultPreview: React.FC<Props> = ({ answers, previewUrl }) => {
             <span className="text-3xl font-extrabold">
               {calculateAnswerStats?.totalCorrect}
             </span>
-            <span className="max-sm:text-sm">{tran("Right Answer")}</span>
+            <span className="max-sm:text-sm">{tran("Right Answers")}</span>
           </div>
           <div className="flex flex-col items-center justify-center gap-3 rounded-md bg-red-200 p-3 sm:p-6">
             <XCircleIcon className="text-6xl text-red-500" />
             <span className="text-3xl font-extrabold">
               {calculateAnswerStats?.totalWrong}
             </span>
-            <span className="max-sm:text-sm">{tran("Wrong Answer")}</span>
+            <span className="max-sm:text-sm">{tran("Wrong Answers")}</span>
           </div>
           <div className="bg-secondary/20 flex flex-col items-center justify-center gap-3 rounded-md p-3 sm:p-6">
             <ClockIcon className="text-secondary text-6xl" />

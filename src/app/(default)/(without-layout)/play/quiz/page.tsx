@@ -113,20 +113,21 @@ export default function PlayQuiz() {
 
   return (
     <div className="h-screen">
-      <div className="custom-container flex h-screen items-center justify-center">
+      <div className="cursor-disabled flex items-center justify-center gap-2 pt-5">
+        <ImageLoader
+          src={appInfo?.application_info?.logo_favicon?.logo_dark || logo}
+          alt={appInfo?.application_info?.company_info?.name}
+          className="max-sm:size-7"
+          width={40}
+          height={40}
+        />
+        <span className="heading-3">
+          {appInfo?.application_info?.company_info?.name}
+        </span>
+      </div>
+      <div className="custom-container flex h-screen py-10 justify-center">
         <div className="bg-primary/5 border-dark5 flex w-full max-w-[1350px] flex-col items-center justify-center overflow-auto rounded-xl border p-6">
-          <div className="cursor-disabled flex items-center justify-center gap-2">
-            <ImageLoader
-              src={appInfo?.application_info?.logo_favicon?.logo_dark || logo}
-              alt={appInfo?.application_info?.company_info?.name}
-              className="max-sm:size-7"
-              width={40}
-              height={40}
-            />
-            <span className="heading-3">
-              {appInfo?.application_info?.company_info?.name}
-            </span>
-          </div>
+          
           <div className="flex w-full items-center justify-center gap-3 max-md:flex-col lg:gap-6 lg:px-20">
             <div className="bg-primary/20 relative h-2 w-full rounded-full max-md:order-2">
               <div
@@ -144,9 +145,13 @@ export default function PlayQuiz() {
                   <span>{quizList.length}</span>
                 </span>
               </div>
-              <Button onClick={() => setModal(true)} variant="danger">
-                Cancel
-              </Button>
+                <Button 
+                onClick={() => setModal(true)} 
+                variant="danger" 
+                className="rounded-full"
+                >
+                <XIcon className="h-5 w-5" />
+                </Button>
             </div>
           </div>
           {currentQuestion && (
@@ -173,6 +178,9 @@ export default function PlayQuiz() {
           <XIcon className="h-5 w-5" />
         </Button>
         <div className="relative flex flex-col gap-6">
+          <p className="text-light4 text-sm">
+            Are you sure you want to cancel this quiz? Your progress will not
+            be saved.</p>
           <Button
             href="/quizzes"
             variant="danger"

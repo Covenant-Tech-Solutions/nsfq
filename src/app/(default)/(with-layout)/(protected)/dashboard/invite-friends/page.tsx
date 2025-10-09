@@ -59,7 +59,7 @@ export default function InviteFriends() {
         <ShareLinks
           link={link}
           text={
-            "Play Quizes online and win coins. Refer your friends and get 50 coins for each new user you refer."
+            "Join me lets cashout our knowledge on BrainBank. Get 50 coins free with this link."
           }
         />
       )}

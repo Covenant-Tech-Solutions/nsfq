@@ -1,14 +1,14 @@
 /** @format */
 
 export const SERVER_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL || "https://quize.safiul.pxlaxis.com";
+  process.env.NEXT_PUBLIC_API_BASE_URL || "https://bb-admin.nexmatics.africa";
 export const API_BASE_URL =
   SERVER_URL + (process.env.NEXT_PUBLIC_API_VERSION_PATH || "/api/v1");
 
 export const TOKEN_NAME = process.env.NEXT_PUBLIC_TOKEN_NAME || "token";
 
 export const APP_BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL || "https://quiz-roan-zeta.vercel.app";
+  process.env.NEXT_PUBLIC_BASE_URL || "https://brainbank.vercel.app";
 
 export const ONBOARDING_POSITION = "ONBOARDING_POSITION";
 

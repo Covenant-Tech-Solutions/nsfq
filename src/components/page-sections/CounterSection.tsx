@@ -14,7 +14,7 @@ export default function CounterSection({ slug }: { slug: string }) {
   }
 
   return (
-    <section className="stp-30 sbp-30 relative overflow-hidden bg-slate-50">
+    <section className="hidden lg:block stp-30 sbp-30 relative overflow-hidden bg-slate-50">
       <div className="custom-container grid grid-cols-12 gap-6">
         {getData("list", []).map((item: any, index: number) => (
           <div

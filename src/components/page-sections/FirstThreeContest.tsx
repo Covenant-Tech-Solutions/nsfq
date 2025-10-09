@@ -45,6 +45,7 @@ const FirstThreeContest = ({ slug }: { slug: string }) => {
   });
 
   return (
+    <section className="hidden lg:block">
     <div className="custom-container stp-30 sbp-30">
       <div className="mx-auto flex max-w-[526px] flex-col items-center justify-center text-center">
         <h2 className="heading-2">{getData("title", "Upcoming Contests")}</h2>
@@ -72,6 +73,7 @@ const FirstThreeContest = ({ slug }: { slug: string }) => {
         </Button>
       </div>
     </div>
+    </section>
   );
 };
 

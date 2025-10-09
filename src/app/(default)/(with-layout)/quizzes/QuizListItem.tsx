@@ -259,12 +259,12 @@ const QuizEnrolElement = ({ quiz }: { quiz: QuizType }) => {
   const { tran } = useTranslations();
   const enrolled = (
     <div className="text-primary flex items-center justify-start gap-1 text-lg">
-      {tran("Enrolled")}{" "}
+      {tran("Joined")}{" "}
     </div>
   );
   const not_enrolled = (
     <React.Fragment>
-      {tran("Enrolled Fee")}:
+      {tran("Joining Fee")}:
       <div className="text-primary flex items-center justify-start gap-1 text-lg">
         {quiz?.is_free ? (
           "Free"

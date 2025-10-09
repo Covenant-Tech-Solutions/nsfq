@@ -187,7 +187,7 @@ const ContestJoinModal: React.FC<Props> = ({
             href={"/terms-conditions"}
             className="hover:text-primary text-sm font-medium underline duration-300"
           >
-            {tran("View Rules & Terms")}
+            {tran("View Terms & Conditions")}
           </Link>
           <ShareNetworkIcon className="text-base" />
         </div>

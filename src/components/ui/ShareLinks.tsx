@@ -14,11 +14,13 @@ import {
   LinkIcon,
   ShareNetworkIcon,
   XLogoIcon,
+  WhatsappLogoIcon,
 } from "@phosphor-icons/react/dist/ssr";
 import {
   FacebookShareButton,
   LinkedinShareButton,
   TwitterShareButton,
+  WhatsappShareButton,
 } from "next-share";
 import { useState } from "react";
 import toast from "react-hot-toast";
@@ -56,6 +58,14 @@ export default function ShareLinks({
       >
         <div className="bg-primary border-primary rounded-lg border p-4">
           <div className="flex items-center justify-center gap-2">
+            <WhatsappShareButton key="whatsapp" url={link} title={text}>
+              <span className="bg-dark3 hover:bg-secondary group flex size-10 cursor-pointer items-center justify-center rounded-full duration-300 sm:size-12">
+                <WhatsappLogoIcon
+                  className="stroke-black duration-300 group-hover:text-white"
+                  size={20}
+                />
+              </span>
+            </WhatsappShareButton>
             <FacebookShareButton key="facebook" url={link} quote={text}>
               <span className="bg-dark3 hover:bg-secondary group flex size-10 cursor-pointer items-center justify-center rounded-full duration-300 sm:size-12">
                 <FacebookLogoIcon

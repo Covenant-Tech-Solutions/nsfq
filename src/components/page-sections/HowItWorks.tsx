@@ -10,7 +10,7 @@ export default function HowItWorks({ slug }: { slug: string }) {
   });
 
   return (
-    <section className="">
+    <section className="hidden lg:block">
       <div className="stp-30 sbp-30 relative overflow-hidden bg-slate-50">
         <div className="bg-secondary/30 absolute -bottom-10 left-0 size-[480px] rounded-full blur-[200px] xl:-left-52"></div>
         <div className="absolute right-0 -bottom-10 size-[480px] rounded-full bg-yellow-100 blur-[200px] xl:-right-20"></div>

@@ -51,8 +51,8 @@ export default function Footer() {
   }
 
   return (
-    <section className="stp-30 relative overflow-hidden">
-      <div className=" ">
+    <section className="relative overflow-hidden">
+      <div className="max-lg:hidden">
         <Subscribe />
         <div className="sbp-30 relative overflow-hidden pt-[200px]">
           <div className="bg-secondary/50 absolute -bottom-40 left-0 size-[480px] rounded-full blur-[200px] xl:-left-40"></div>

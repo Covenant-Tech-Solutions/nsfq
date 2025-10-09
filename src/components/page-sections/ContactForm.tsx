@@ -33,7 +33,7 @@ const ContactForm = ({ slug }: { slug: string }) => {
     });
   };
   return (
-    <section className="stp-30 custom-container">
+    <section className="hidden lg:block stp-30 custom-container">
       <div className="bg-dark4 border-dark5 rounded-md border p-6 md:p-10">
         <form
           onSubmit={handleSendMessage}

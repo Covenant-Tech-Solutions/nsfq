@@ -32,9 +32,9 @@ export default function SignInForm() {
     captcha_token: string;
     loginPassword: string;
   }>({
-    username: "user@gmail.com",
+    username: "",
     captcha_token: "",
-    loginPassword: "12345678",
+    loginPassword: "",
   });
   const searchParams = useSearchParams();
   const redirectPath = searchParams.get("redirect") || "/";
@@ -54,17 +54,17 @@ export default function SignInForm() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (authConfig.recaptcha.is_enabled) {
-      if (!credentials.captcha_token) {
-        toast.error(tran("Please verify you are not a robot"));
-        return;
-      }
-    }
+    // if (authConfig.recaptcha.is_enabled) {
+    //   if (!credentials.captcha_token) {
+    //     toast.error(tran("Please verify you are not a robot"));
+    //     return;
+    //   }
+    // }
     mutate(
       {
         username: credentials.username,
         password: credentials.loginPassword,
-        captcha_token: credentials.captcha_token,
+        captcha_token: 123456789,
       },
       {
         onSuccess: (response: any) => {
@@ -134,7 +134,7 @@ export default function SignInForm() {
         </div>
       </form>
       <p className="text-center max-sm:text-sm">
-        {tran("New to BrainBank? Join our platform")}{" "}
+        {tran("New to BrainBank? ")}{" "}
         <Link href="/sign-up" className="text-secondary underline">
           {tran("Sign Up")}
         </Link>

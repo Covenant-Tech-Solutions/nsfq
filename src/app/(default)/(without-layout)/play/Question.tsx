@@ -138,6 +138,16 @@ export default function QuestionPage({
                   y: y / window.innerHeight,
                 },
               });
+              // Automatically continue to next question after 2 seconds
+              setTimeout(() => {
+                if (questionOrderNumber < totalQuestion) {
+                  refetch();
+                  localStorage.removeItem(questions?.translation?.slug || "");
+                  setIsAlreadyAnswered(false);
+                } else {
+                  showResult();
+                }
+              }, 2000);
             } else {
               toast.error(data?.message);
             }
@@ -145,7 +155,7 @@ export default function QuestionPage({
         },
       );
     },
-    [mutate, tran, quizName, getTimeTaken, questions?.translation?.slug],
+    [mutate, tran, quizName, getTimeTaken, questions?.translation?.slug, questionOrderNumber, totalQuestion, refetch],
   );
 
   const renderQuestionText = (text: string | undefined) => {
@@ -196,28 +206,31 @@ export default function QuestionPage({
 
     return (
       <div className="flex items-center gap-3">
-        <Button
-          disabled={isAlreadyAnswered}
-          loading={isLoading}
-          onClick={(e) => {
-            submitAnswer(selectedAnswer, e);
-          }}
-        >
-          Submit
-        </Button>
+        {!isAlreadyAnswered && (
+          <Button
+            loading={isLoading}
+            onClick={(e) => {
+              submitAnswer(selectedAnswer, e);
+            }}
+            className="w-full w-50 sm:w-auto"
+          >
+            Submit
+          </Button>
+        )}
 
-        <Button
-          onClick={() => {
-            refetch();
-            localStorage.removeItem(questions?.translation?.slug || "");
-            setIsAlreadyAnswered(false);
-          }}
-          disabled={isLoading || !isAlreadyAnswered}
-          variant="secondary"
-          className="text-black"
-        >
-          Continue
-        </Button>
+        {isAlreadyAnswered && !isLoading && (
+          <Button
+            onClick={() => {
+              refetch();
+              localStorage.removeItem(questions?.translation?.slug || "");
+              setIsAlreadyAnswered(false);
+            }}
+            variant="secondary"
+            className="w-full w-50 sm:w-auto text-black"
+          >
+            Continue
+          </Button>
+        )}
       </div>
     );
   }, [
@@ -238,6 +251,17 @@ export default function QuestionPage({
         <QuestionLoader />
       ) : (
         <>
+          <QuestionCountDownTimer
+              initialDuration={timeLimit}
+              size={60}
+              progressColor="var(--primary)"
+              questionOrder={questionOrder}
+              onComplete={handleOnCompleteTimer}
+              setQuestionTimeOut={setQuestionTimeOut}
+              getQuestionTimeOut={getQuestionTimeOut}
+              removeQuestionTimeOut={removeQuestionTimeOut}
+              isAlreadyAnswered={isAlreadyAnswered}
+            />
           <h4 className="heading-4 text-center">
             {renderQuestionText(questions?.translation?.question_text)}
           </h4>
@@ -258,20 +282,8 @@ export default function QuestionPage({
           </div>
 
           <div className="border-dark5 flex w-full flex-wrap items-center justify-between gap-3 border-t pt-4 sm:gap-6">
-            <QuestionCountDownTimer
-              initialDuration={timeLimit}
-              size={60}
-              progressColor="var(--primary)"
-              questionOrder={questionOrder}
-              onComplete={handleOnCompleteTimer}
-              setQuestionTimeOut={setQuestionTimeOut}
-              getQuestionTimeOut={getQuestionTimeOut}
-              removeQuestionTimeOut={removeQuestionTimeOut}
-              isAlreadyAnswered={isAlreadyAnswered}
-            />
-
-            <div className="flex flex-wrap gap-3">
-              <HintTooltip hint={questions?.translation?.hints} />
+          <HintTooltip hint={questions?.translation?.hints} />
+            <div className="flex flex-wrap gap-3">             
 
               {questionButton}
             </div>

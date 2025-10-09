@@ -110,7 +110,7 @@ const QuizAssignModal: React.FC<Props> = ({
               <p className="">{tran("Available Coins")}</p>
             </div>
             <p className="font-medium">
-              {tran("Available")} {user?.coins || 0} {tran("Coins")}
+              {user?.coins || 0} {tran("Coins")}
             </p>
           </div>
           <div className="flex w-full flex-wrap items-center justify-between gap-2">
@@ -153,7 +153,7 @@ const QuizAssignModal: React.FC<Props> = ({
               disabled={isAssignQuizLoading}
               onClick={handleAssignQuiz}
             >
-              {tran("Unlock Now")}
+              {tran("Start Now")}
             </Button>
           )}
 
@@ -166,7 +166,7 @@ const QuizAssignModal: React.FC<Props> = ({
             href={"/terms-conditions"}
             className="hover:text-primary text-sm font-medium underline duration-300"
           >
-            {tran("View Rules & Terms")}
+            {tran("View Terms & Conditions")}
           </Link>
           <ShareNetworkIcon className="text-base" />
         </div>

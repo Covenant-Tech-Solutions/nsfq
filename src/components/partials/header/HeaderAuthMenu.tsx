@@ -29,7 +29,7 @@ const HeaderAuthMenu = () => {
 
   return user ? (
     <div className="flex items-center justify-start gap-1 sm:gap-3">
-      {appInfo && <FirebaseNotification appInfo={appInfo} />}
+      
       <div className="bg-primary/5 border-primary/10 flex items-center justify-start gap-1 rounded-md border px-3 py-1 sm:gap-3 sm:px-4 sm:py-2.5">
         <ImageLoader
           src={coindImg}
@@ -80,6 +80,10 @@ const HeaderAuthMenu = () => {
                 <GearIcon />
                 <span className=" ">{tran("Logout")}</span>
               </button>
+            </DropdownMenuItem>
+
+            <DropdownMenuItem className="p-0">
+              {appInfo && <FirebaseNotification appInfo={appInfo} />}
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

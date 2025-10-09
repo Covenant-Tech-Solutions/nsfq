@@ -10,6 +10,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { SetStateAction, useState } from "react";
+import { _SIDEBAR_MENU } from "@/constants/Sidebar";
 
 const AnimateHeight = dynamic(() => import("react-animate-height"), {
   ssr: false,
@@ -339,6 +340,28 @@ export default function MobileNavMenu({
               );
             })}
           </ul>
+          {/* Sidebar menu items */}
+          <div className="mt-6">
+            {/* <span className="block mb-2 font-bold text-primary">Sidebar Menu</span> */}
+            <ul className="flex flex-col gap-1">
+              {_SIDEBAR_MENU.map((item) => (
+                <li key={item.id} className="list-none border-b border-gray-100">
+                  <Link
+                    href={item.link}
+                    onClick={() => setShowMobileMenu(false)}
+                    className={`flex items-center gap-2 rounded-md px-2 py-3 font-semibold duration-300 ${
+                      path === item.link || path.startsWith(item.link)
+                        ? "text-primary bg-primary/5 font-bold"
+                        : "hover:text-primary"
+                    }`}
+                  >
+                    {React.createElement(item.icon, { className: "text-xl" })}
+                    <span>{item.name}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </nav>
       </div>
     </>
