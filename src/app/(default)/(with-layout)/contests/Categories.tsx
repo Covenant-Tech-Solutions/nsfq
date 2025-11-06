@@ -44,21 +44,6 @@ export default function Categories({
   const modalPosition = rightWidth < 220 ? "right-0" : "left-0";
 
   return (
-    <ul className="flex flex-wrap items-center justify-start gap-3 pt-6 font-medium">
-      <li
-        onClick={() => setSelectedCategory("all")}
-        className={cn(
-          "hover:bg-primary/30 flex cursor-pointer items-center justify-start gap-1 rounded-md px-2 py-1 duration-300",
-          "all" === categoryParam && "bg-primary/30",
-        )}
-      >
-        <GlobeIcon className="text-primary text-xl" />
-        {tran("All")}
-      </li>     
-            </ul>
-          </div>
-        </div>
-      </li>
-    </ul>
+    <></>
   );
 }
