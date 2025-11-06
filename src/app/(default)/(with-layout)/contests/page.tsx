@@ -12,8 +12,8 @@ export default function ContestPage() {
   return (
     <div className="custom-container pt-28">
       <QuizBanner
-        title="Join the Ultimate Quiz Battle!"
-        subtitle="Test Your Knowledge. Win exciting rewards."
+        title=""
+        subtitle=""
         image="/contest-banner.webp"
         nextContest={true}
       />

@@ -34,11 +34,11 @@ const QuizBanner = ({
       />
 
       <div className="absolute inset-0 z-40 flex justify-between gap-2 p-6 max-md:flex-col max-md:justify-center sm:p-10 md:items-center">
-        <div className="heading-1">
-          <p className="max-w-[550px] leading-[110%] text-white uppercase">
+        <div className="hidden heading-1">
+          <p className="hidden max-w-[550px] leading-[110%] text-white uppercase">
             {tran(title)}
           </p>
-          <span className="heading-5 leading-[110%] !font-normal text-white">
+          <span className="hidden heading-5 leading-[110%] !font-normal text-white">
             {tran(subtitle)}
           </span>
         </div>

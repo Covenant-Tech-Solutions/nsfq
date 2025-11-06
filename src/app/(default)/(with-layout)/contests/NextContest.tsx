@@ -39,7 +39,7 @@ const NextContest = () => {
       <Button
         href={`/contests/${contests?.data[0]?.translation?.slug}`}
         variant="primary-outline"
-        className="hover:border-primary border-white text-white hover:text-white max-md:w-fit"
+        className="hidden hover:border-primary border-white text-white hover:text-white max-md:w-fit"
       >
         {tran("View Contest")}
       </Button>
