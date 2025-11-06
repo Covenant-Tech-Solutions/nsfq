@@ -28,7 +28,7 @@ export default function Categories({
 
   const { data: categories, isLoading } = useGetQuery<QuizCategoryApiResponse>({
     isPublic: true,
-    url: "/quiz-categories",
+    url: "/contest-categories",
   });
 
   if (isLoading) {
