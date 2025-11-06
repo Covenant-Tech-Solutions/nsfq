@@ -13,7 +13,7 @@ export default function ContestPage() {
     <div className="custom-container pt-28">
       <QuizBanner
         title=""
-        subtitle="Support with your brains"
+        subtitle=""
         image="/contest-banner.webp"
         nextContest={true}
       />
